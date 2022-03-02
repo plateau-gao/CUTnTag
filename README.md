@@ -1,8 +1,12 @@
 # CUTnTag
 This is for CUT&Tag data process.
+
 * The `input.csv` contains all the fastq files gathering from NGS. There are five key words serving as column names which cannot be changed: `group`, `cond`, `SampleId`,`read1` and `read2`
+
 * The parameters are set in the `cutntag.config` file. The syntax of nextflow config file is `key=value`. Users can change the 'value' in the config file to change the parameters used in pipeline. Please do not change the 'key', which may cause errors to the pipelines.
+
 * The `cutntag.def` is used for build singularity image for this pipelines.
+
 * For the pipeline it self:
   - Data pre-processing:
     - Quality control of fastq file: `fastqc`(optional)
