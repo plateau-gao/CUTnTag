@@ -1,0 +1,48 @@
+BootStrap: library
+From: library/default/ubuntu:20.04
+
+%post
+    apt-get update -y
+    apt-get install -y wget unzip 
+    
+    # install conda
+    wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Linux-x86_64.sh -O /tmp/miniconda.sh
+    bash /tmp/miniconda.sh -bfp /usr/local
+    rm -rf /tmp/miniconda.sh
+
+    # conda setting
+    conda update conda
+    conda config --add channels conda-forge
+    conda config --add channels bioconda
+
+    # conda install packages
+    conda install bc
+    
+    conda install r-base==4.1.2
+    conda install fastqc==0.11.9
+    conda install trim-galore
+    conda install bowtie2==2.4.5
+    conda install samtools==1.14
+    conda install bedtools==2.30.0
+    conda install picard==2.26.10
+    conda install seacr 
+    conda install deeptools==3.5.1
+    conda install macs2==2.2.7.1
+
+    conda install bioconductor-chromvar
+    conda install r-viridis
+    conda install bioconductor-genomicranges
+    conda install r-ggpubr
+    conda install r-corrplot
+
+    conda clean -a
+
+%environment
+    export LC_ALL=C
+    export PATH=/opt/conda/bin:$PATH
+
+%labels
+    Plateau - Gao
+
+%help
+    This container is for CUT&Tag

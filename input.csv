@@ -1,0 +1,7 @@
+group,cond,SampleId,read1,read2
+1,exp,H3K4me3,rep1_1.fastq,rep1_2.fastq
+1,exp,H3K27me3,rep1_1.fastq,rep1_2.fastq
+1,ctrl,IgG,rep1_1.fastq,rep1_2.fastq
+2,exp,H3K4me3,rep2_1.fastq,rep2_2.fastq
+2,exp,H3K27me3,rep2_1.fastq,rep2_2.fastq
+2,ctrl,IgG,rep2_1.fastq,rep2_2.fastq
